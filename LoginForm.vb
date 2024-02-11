@@ -23,7 +23,7 @@ Public Class LoginForm
                 attempts = 0
                 If Not dr.HasRows = 0 Then
                     If dr.Item("level") = "admin" And dr.Item("username") = tbUsername.Text Then
-                        MessageBox.Show("Welcome Admin!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show($"Welcome {dr.Item("nama_petugas")}!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         With MainLayout
                             Me.Hide()
                             .Show()
@@ -31,7 +31,7 @@ Public Class LoginForm
                             .lbUserLvl.Text = dr.Item("level")
                         End With
                     ElseIf dr.Item("level") = "petugas" And dr.Item("username") = tbUsername.Text Then
-                        MessageBox.Show("Welcome " + tbUsername.Text + "!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show($"Welcome {dr.Item("nama_petugas")}!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         With MainLayout
                             Me.Hide()
                             .Show()
