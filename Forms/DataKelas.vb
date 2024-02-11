@@ -81,10 +81,11 @@ Public Class DataKelas
         Dim i As Integer = DataGridKelas.CurrentRow.Index
         _id = Convert.ToString(DataGridKelas.Item(0, i).Value)
         _nama = Convert.ToString(DataGridKelas.Item(1, i).Value)
-        _jurusan = DataGridKelas.Item(2, i).Value
+        _jurusan = DataGridKelas.Item(2, i).Value.ToString
     End Sub
 
     Private Sub DataGridKelas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridKelas.CellDoubleClick
+        getJurusan()
         tbIdKelas.Text = _id
         tbNamaKelas.Text = _nama
         cbJurusan.SelectedValue = _jurusan
@@ -99,7 +100,6 @@ Public Class DataKelas
         btnEdit.Visible = True
         btnHapus.Visible = True
         btnBatal.Visible = True
-        getJurusan()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -177,12 +177,14 @@ Public Class DataKelas
     Public Function load_kelas()
         Try
             Call openConn()
-            DA = New OdbcDataAdapter("SELECT * FROM kelas ORDER BY id_kelas ASC", Conn)
+            DA = New OdbcDataAdapter("SELECT a.id_kelas, a.nama_kelas, a.id_jurusan, b.nama_jurusan
+                    FROM kelas a JOIN jurusan b USING(id_jurusan) ORDER BY a.id_kelas ASC", Conn)
             DS = New DataSet
             DS.Clear()
             DA.Fill(DS, "kelas")
             DataGridKelas.DataSource = DS.Tables("kelas")
             DataGridKelas.ReadOnly = True
+            DataGridKelas.Columns("id_jurusan").Visible = False
             Call closeConn()
         Catch ex As Exception
             MsgBox(ex.Message)

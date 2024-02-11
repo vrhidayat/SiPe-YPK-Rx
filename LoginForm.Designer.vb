@@ -31,12 +31,12 @@ Partial Class LoginForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -147,6 +147,16 @@ Partial Class LoginForm
         Me.Panel2.Size = New System.Drawing.Size(259, 168)
         Me.Panel2.TabIndex = 7
         '
+        'btnClose
+        '
+        Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnClose.Location = New System.Drawing.Point(140, 119)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(81, 23)
+        Me.btnClose.TabIndex = 5
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
         'btnLogin
         '
         Me.btnLogin.Location = New System.Drawing.Point(41, 119)
@@ -160,9 +170,9 @@ Partial Class LoginForm
         '
         Me.tbPassword.Location = New System.Drawing.Point(121, 67)
         Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbPassword.Size = New System.Drawing.Size(100, 20)
         Me.tbPassword.TabIndex = 3
-        Me.tbPassword.UseSystemPasswordChar = True
         '
         'tbUsername
         '
@@ -192,16 +202,6 @@ Partial Class LoginForm
         Me.Label7.Size = New System.Drawing.Size(62, 12)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Username"
-        '
-        'btnClose
-        '
-        Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClose.Location = New System.Drawing.Point(140, 119)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(81, 23)
-        Me.btnClose.TabIndex = 5
-        Me.btnClose.Text = "Close"
-        Me.btnClose.UseVisualStyleBackColor = True
         '
         'LoginForm
         '

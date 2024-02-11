@@ -36,7 +36,7 @@ Partial Class MainLayout
         Me.lbUserName = New System.Windows.Forms.Label()
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PanelContent = New System.Windows.Forms.Panel()
@@ -280,7 +280,7 @@ Partial Class MainLayout
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.btnLogout)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
@@ -289,14 +289,14 @@ Partial Class MainLayout
         Me.Panel3.Size = New System.Drawing.Size(739, 52)
         Me.Panel3.TabIndex = 1
         '
-        'Button1
+        'btnLogout
         '
-        Me.Button1.Location = New System.Drawing.Point(640, 16)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Logout"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnLogout.Location = New System.Drawing.Point(640, 16)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(75, 23)
+        Me.btnLogout.TabIndex = 4
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -368,5 +368,5 @@ Partial Class MainLayout
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelContent As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogout As Button
 End Class

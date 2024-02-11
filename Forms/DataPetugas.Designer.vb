@@ -77,12 +77,13 @@ Partial Class DataPetugas
         '
         'cbLevel
         '
+        Me.cbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbLevel.FormattingEnabled = True
         Me.cbLevel.Items.AddRange(New Object() {"admin", "petugas"})
         Me.cbLevel.Location = New System.Drawing.Point(118, 129)
         Me.cbLevel.Name = "cbLevel"
         Me.cbLevel.Size = New System.Drawing.Size(121, 22)
-        Me.cbLevel.TabIndex = 10
+        Me.cbLevel.TabIndex = 5
         '
         'Label7
         '
@@ -107,7 +108,7 @@ Partial Class DataPetugas
         Me.tbNamaPetugas.Location = New System.Drawing.Point(118, 104)
         Me.tbNamaPetugas.Name = "tbNamaPetugas"
         Me.tbNamaPetugas.Size = New System.Drawing.Size(132, 20)
-        Me.tbNamaPetugas.TabIndex = 7
+        Me.tbNamaPetugas.TabIndex = 4
         '
         'Label5
         '
@@ -123,7 +124,7 @@ Partial Class DataPetugas
         Me.tbPassword.Location = New System.Drawing.Point(118, 78)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.Size = New System.Drawing.Size(98, 20)
-        Me.tbPassword.TabIndex = 5
+        Me.tbPassword.TabIndex = 3
         '
         'FlowLayoutPanel1
         '
@@ -212,14 +213,14 @@ Partial Class DataPetugas
         Me.tbUsername.Location = New System.Drawing.Point(118, 52)
         Me.tbUsername.Name = "tbUsername"
         Me.tbUsername.Size = New System.Drawing.Size(98, 20)
-        Me.tbUsername.TabIndex = 1
+        Me.tbUsername.TabIndex = 2
         '
         'tbIdPetugas
         '
         Me.tbIdPetugas.Location = New System.Drawing.Point(118, 26)
         Me.tbIdPetugas.Name = "tbIdPetugas"
         Me.tbIdPetugas.Size = New System.Drawing.Size(66, 20)
-        Me.tbIdPetugas.TabIndex = 0
+        Me.tbIdPetugas.TabIndex = 1
         '
         'Label4
         '

@@ -91,4 +91,14 @@ Public Class MainLayout
         OpenChildForm(New DataLaporan)
     End Sub
 
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim Pesan As String
+        Pesan = MsgBox("Anda Yakin Mau Keluar ?", vbQuestion + vbYesNo, "QUESTION")
+        If Pesan = vbYes Then
+            If Me IsNot Nothing Then
+                Me.Close()
+            End If
+            LoginForm.Show()
+        End If
+    End Sub
 End Class
