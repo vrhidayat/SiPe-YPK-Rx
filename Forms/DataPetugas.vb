@@ -61,6 +61,7 @@ Public Class DataPetugas
             tbPassword.Enabled = True
             tbNamaPetugas.Enabled = True
             cbLevel.Enabled = True
+
             btnBatal.Visible = True
             DataGridPetugas.Enabled = False
             tbCariData.Enabled = False
@@ -75,7 +76,7 @@ Public Class DataPetugas
                     .Parameters.AddWithValue("@username", tbUsername.Text)
                     .Parameters.AddWithValue("@password", tbPassword.Text)
                     .Parameters.AddWithValue("@nama_petugas", tbNamaPetugas.Text)
-                    .Parameters.AddWithValue("@level", cbLevel.SelectedValue)
+                    .Parameters.AddWithValue("@level", cbLevel.Text)
                     .ExecuteNonQuery()
                 End With
                 MsgBox("Data Tersimpan❤️")
@@ -99,15 +100,21 @@ Public Class DataPetugas
         _username = Convert.ToString(DataGridPetugas.Item(1, i).Value)
         _password = Convert.ToString(DataGridPetugas.Item(2, i).Value)
         _nama = Convert.ToString(DataGridPetugas.Item(3, i).Value)
-        _level = DataGridPetugas.Item(4, i).Value
+        _level = Convert.ToString(DataGridPetugas.Item(4, i).Value)
     End Sub
 
     Private Sub DataGridPetugas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridPetugas.CellDoubleClick
+        tbUsername.Enabled = True
+        tbPassword.Enabled = True
+        tbNamaPetugas.Enabled = True
+        cbLevel.Enabled = True
+
         tbIdPetugas.Text = _id
         tbUsername.Text = _username
         tbPassword.Text = _password
         tbNamaPetugas.Text = _nama
-        cbLevel.SelectedText = _level
+        cbLevel.SelectedItem = _level
+
         DataGridPetugas.Enabled = False
         tbCariData.Enabled = False
         btnTambah.Visible = False
@@ -120,14 +127,13 @@ Public Class DataPetugas
         Try
             openConn()
             If MsgBox("Are you sure you want to update the data?", vbYesNo + vbQuestion) = vbYes Then
-                SQLUpdate = "UPDATE petugas set username= ?, password= ?, nama_petugas=?, level=? WHERE id_petugas like '" & tbIdPetugas.Text & "'"
+                SQLUpdate = $"UPDATE petugas set username= ?, password= ?, nama_petugas=?, level=? WHERE id_petugas = '{tbIdPetugas.Text}'"
                 CMD = New OdbcCommand(SQLUpdate, Conn)
                 With CMD
-                    .Parameters.AddWithValue("@id_petugas", tbIdPetugas.Text)
                     .Parameters.AddWithValue("@username", tbUsername.Text)
                     .Parameters.AddWithValue("@password", tbPassword.Text)
                     .Parameters.AddWithValue("@nama_petugas", tbNamaPetugas.Text)
-                    .Parameters.AddWithValue("@level", cbLevel.SelectedText)
+                    .Parameters.AddWithValue("@level", cbLevel.Text)
                     .ExecuteNonQuery()
                 End With
                 MsgBox("Data Updated")
@@ -138,12 +144,12 @@ Public Class DataPetugas
                 btnTambah.Visible = True
                 btnBatal.Visible = False
             End If
-        Catch ex As Exception
-            MessageBox.Show("err: " + ex.Message)
-        Finally
+
             closeConn()
             DataGridPetugas.Enabled = True
             tbCariData.Enabled = True
+        Catch ex As Exception
+            MessageBox.Show("err: " + ex.Message)
         End Try
     End Sub
 

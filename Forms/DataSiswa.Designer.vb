@@ -95,6 +95,7 @@ Partial Class DataSiswa
         '
         'cbKelas
         '
+        Me.cbKelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbKelas.FormattingEnabled = True
         Me.cbKelas.Location = New System.Drawing.Point(119, 127)
         Me.cbKelas.Name = "cbKelas"
@@ -120,6 +121,7 @@ Partial Class DataSiswa
         '
         'cbAngkatan
         '
+        Me.cbAngkatan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbAngkatan.FormattingEnabled = True
         Me.cbAngkatan.Location = New System.Drawing.Point(304, 75)
         Me.cbAngkatan.Name = "cbAngkatan"

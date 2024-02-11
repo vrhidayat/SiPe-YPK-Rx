@@ -201,7 +201,6 @@ Public Class DataTransaksi
     End Sub
 
     Private Sub BtnBayar_Click(sender As Object, e As EventArgs) Handles btnBayar.Click
-
         Try
             openConn()
             SQLInsert = "INSERT INTO pembayaran VALUES (?,?,?,?,?,?,?)"
@@ -217,8 +216,8 @@ Public Class DataTransaksi
                 .ExecuteNonQuery()
             End With
             MsgBox("Data Tersimpan")
-            reset()
-            load_trSiswa()
+            'reset()
+            load_transaksi(_nisn)
         Catch ex As Exception
             MessageBox.Show("error : " + ex.Message)
         Finally

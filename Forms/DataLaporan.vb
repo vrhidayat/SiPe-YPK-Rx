@@ -53,4 +53,13 @@ Public Class DataLaporan
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         load_laporan()
     End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Dim CReport As New CRView
+        CReport.dtpStart.Value = dtpStart.Value
+        CReport.dtpEnd.Value = dtpEnd.Value
+
+        Call CReport.PrintBasedDate()
+        CReport.ShowDialog()
+    End Sub
 End Class

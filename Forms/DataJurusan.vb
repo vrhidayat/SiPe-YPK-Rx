@@ -130,7 +130,7 @@ Public Class DataJurusan
         If Konfirmasi = vbYes Then
             Try
                 Call openConn()
-                SQLDelete = "DELETE FROM jurusan WHERE id_kelas ='" & tbIdJurusan.Text & "'"
+                SQLDelete = "DELETE FROM jurusan WHERE id_jurusan='" & tbIdJurusan.Text & "'"
                 CMD = New OdbcCommand(SQLDelete, Conn)
 
                 CMD.ExecuteNonQuery()
